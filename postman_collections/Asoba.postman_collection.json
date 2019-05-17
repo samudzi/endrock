@@ -1,0 +1,339 @@
+{
+	"info": {
+		"_postman_id": "5057a214-4ef8-4e82-9983-c4e2fe828e0c",
+		"name": "Asoba",
+		"description": "https://help.shopify.com/en/api/reference/orders/order#index",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Shopify - Get Orders By Created Date",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://974c2a468dcd79a926dcd0ddd2976d3c:e9eba5598b0062ca6967510b012f7ccc@priverevaux.myshopify.com/admin/orders.json?created_at_min=2019-03-24T00:00:00-00:00&limit=2",
+					"protocol": "https",
+					"host": [
+						"priverevaux",
+						"myshopify",
+						"com"
+					],
+					"auth": {
+						"user": "974c2a468dcd79a926dcd0ddd2976d3c",
+						"password": "e9eba5598b0062ca6967510b012f7ccc"
+					},
+					"path": [
+						"admin",
+						"orders.json"
+					],
+					"query": [
+						{
+							"key": "created_at_min",
+							"value": "2019-03-24T00:00:00-00:00"
+						},
+						{
+							"key": "limit",
+							"value": "2"
+						},
+						{
+							"key": "created_at_max",
+							"value": "2019-03-25T00:00:00-00:00",
+							"disabled": true
+						}
+					]
+				},
+				"description": "https://help.shopify.com/en/api/reference/orders/order#index"
+			},
+			"response": []
+		},
+		{
+			"name": "klaviyo Get metrics",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://a.klaviyo.com/api/v1/metrics?api_key=pk_5dc8270a33e6157bac5424891fb16c2abd&page=0&count=10",
+					"protocol": "https",
+					"host": [
+						"a",
+						"klaviyo",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"metrics"
+					],
+					"query": [
+						{
+							"key": "api_key",
+							"value": "pk_5dc8270a33e6157bac5424891fb16c2abd"
+						},
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "count",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Shopify - Get Orders Count by created date",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://974c2a468dcd79a926dcd0ddd2976d3c:e9eba5598b0062ca6967510b012f7ccc@priverevaux.myshopify.com/admin/orders/count.json?created_at_min=2019-03-23T00:00:00-00:00&created_at_max=2019-03-24T23:59:59-00:00",
+					"protocol": "https",
+					"host": [
+						"priverevaux",
+						"myshopify",
+						"com"
+					],
+					"auth": {
+						"user": "974c2a468dcd79a926dcd0ddd2976d3c",
+						"password": "e9eba5598b0062ca6967510b012f7ccc"
+					},
+					"path": [
+						"admin",
+						"orders",
+						"count.json"
+					],
+					"query": [
+						{
+							"key": "created_at_min",
+							"value": "2019-03-23T00:00:00-00:00"
+						},
+						{
+							"key": "created_at_max",
+							"value": "2019-03-24T23:59:59-00:00"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Shopify - Get orders since id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://974c2a468dcd79a926dcd0ddd2976d3c:e9eba5598b0062ca6967510b012f7ccc@priverevaux.myshopify.com/admin/orders.json?since_id=2019-03-24T00:00:00-00:00&limit=2",
+					"protocol": "https",
+					"host": [
+						"priverevaux",
+						"myshopify",
+						"com"
+					],
+					"auth": {
+						"user": "974c2a468dcd79a926dcd0ddd2976d3c",
+						"password": "e9eba5598b0062ca6967510b012f7ccc"
+					},
+					"path": [
+						"admin",
+						"orders.json"
+					],
+					"query": [
+						{
+							"key": "since_id",
+							"value": "2019-03-24T00:00:00-00:00"
+						},
+						{
+							"key": "limit",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Klaviyo - Get Particular Metric Details",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://a.klaviyo.com/api/v1/metric/NNChv3/timeline?api_key=pk_5dc8270a33e6157bac5424891fb16c2abd&sort=desc",
+					"protocol": "https",
+					"host": [
+						"a",
+						"klaviyo",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"metric",
+						"NNChv3",
+						"timeline"
+					],
+					"query": [
+						{
+							"key": "api_key",
+							"value": "pk_5dc8270a33e6157bac5424891fb16c2abd"
+						},
+						{
+							"key": "sort",
+							"value": "desc"
+						},
+						{
+							"key": "count",
+							"value": "10",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Klaviyo - Export Metric Data",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://a.klaviyo.com/api/v1/metric/NNChv3/export?api_key=pk_5dc8270a33e6157bac5424891fb16c2abd&count=25&unit=day",
+					"protocol": "https",
+					"host": [
+						"a",
+						"klaviyo",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"metric",
+						"NNChv3",
+						"export"
+					],
+					"query": [
+						{
+							"key": "api_key",
+							"value": "pk_5dc8270a33e6157bac5424891fb16c2abd"
+						},
+						{
+							"key": "sort",
+							"value": "asc",
+							"disabled": true
+						},
+						{
+							"key": "count",
+							"value": "25",
+							"description": "Maximum number of segments to return. The default value is 25."
+						},
+						{
+							"key": "unit",
+							"value": "day",
+							"description": "Granularity to bucket data points into - one of ‘day’, ‘week’, or ‘month’. Defaults to ‘day’."
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Klaviyo - Get Complete Event Timeline",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://a.klaviyo.com/api/v1/metrics/timeline?api_key=pk_5dc8270a33e6157bac5424891fb16c2abd&sort=desc&count=10&since=9867a500-4b10-11e9-8001-8760b8c20f9d",
+					"protocol": "https",
+					"host": [
+						"a",
+						"klaviyo",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"metrics",
+						"timeline"
+					],
+					"query": [
+						{
+							"key": "api_key",
+							"value": "pk_5dc8270a33e6157bac5424891fb16c2abd"
+						},
+						{
+							"key": "sort",
+							"value": "desc"
+						},
+						{
+							"key": "count",
+							"value": "10"
+						},
+						{
+							"key": "since",
+							"value": "9867a500-4b10-11e9-8001-8760b8c20f9d"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

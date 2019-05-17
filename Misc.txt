@@ -1,0 +1,21 @@
+----------------------
+Klaviyo API:
+
+https://us-west-2.console.aws.amazon.com/cloudwatch/home?region=us-west-2#logEventViewer:group=/aws/lambda/analytics-ingest-dev-ingest-klaviyo-timeline-analytics;stream=2019/03/28/%5B$LATEST%5Df3ec8dc473bb4d89912588eb44a716bc;refid=34650685727791617531546990409748615303765188533728903168;reftime=1553790486341
+
+last_uuid: e581ec00-46b6-11e9-8001-a548d47c8087, event_date: 2019-03-15
+Thread List: 100
+last_uuid: 1d3c6400-46b6-11e9-8001-cfe1dc6d23b9, event_date: 2019-03-15
+Thread List: 100
+last_uuid: 64762500-46b5-11e9-8001-e53e5c53f5cf, event_date: 2019-03-15
+
+
+----------------------------------------------------------------------------------------
+Google Analytics:
+
+Country Wise reports
+Browser Wise reports
+
+
+
+----------------------------------------------------------------------------------------

@@ -1,0 +1,19 @@
+drop table shopify;
+
+CREATE TABLE shopify
+(
+  id     BIGINT NOT NULL,
+  email        VARCHAR(500),
+  token        VARCHAR(500),
+  gateway    VARCHAR(500)
+);
+
+select * from public."shopify" limit 10;
+
+copy shopify
+from 's3://asoba-shopify-analytics-dev/orders'
+iam_role 'arn:aws:iam::984273356251:role/etl-pipeline-access-for-redshift'
+json 's3://asoba-analytics-dev/shopify_jsonpath.json';
+
+select count(*) from public."shopify";
+

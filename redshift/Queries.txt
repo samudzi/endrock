@@ -1,0 +1,38 @@
+https://docs.aws.amazon.com/redshift/latest/dg/tutorial-loading-data.html
+https://docs.aws.amazon.com/redshift/latest/dg/r_COPY_command_examples.html#r_COPY_command_examples-copy-from-json
+
+
+
+Copy Files using IAM Credentials
+
+        copy customer
+        from 's3://etl-pipeline-redshift-demo/load/customer-fw.tbl'
+        credentials 'aws_access_key_id=<ACCESS_KEY>;aws_secret_access_key=<SECRET_ACCESS_KEY>'
+        fixedwidth 'c_custkey:10, c_name:25, c_address:25, c_city:10, c_nation:15, c_region :12, c_phone:15,c_mktsegment:10'
+        maxerror 10;
+
+        select * from "customer" limit 10;
+
+        truncate table customer;
+
+Copy Files using IAM Role
+
+        copy customer
+        from 's3://etl-pipeline-redshift-demo/load/customer-fw.tbl'
+        iam_role 'arn:aws:iam::984273356251:role/etl-pipeline-access-for-redshift'
+        fixedwidth 'c_custkey:10, c_name:25, c_address:25, c_city:10, c_nation:15, c_region :12, c_phone:15,c_mktsegment:10'
+        maxerror 10;
+
+        select * from "customer" limit 10;
+
+Find errors while loading data
+
+        select query, substring(filename,22,50) as filename,line_number as line,
+        substring(colname,0,12) as column, type, position as pos, substring(raw_line,0,30) as line_text,
+        substring(raw_field_value,0,15) as field_text,
+        substring(err_reason,0,45) as error_reason
+        from stl_load_errors
+        order by query desc, filename
+        limit 7;
+
+

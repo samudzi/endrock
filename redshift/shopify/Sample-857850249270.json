@@ -1,0 +1,351 @@
+{
+    "id": 857850249270,
+    "email": "llj1414g@gmail.com",
+    "closed_at": null,
+    "created_at": "2019-03-25T09:45:20-04:00",
+    "updated_at": "2019-03-25T09:45:23-04:00",
+    "number": 84807,
+    "note": "",
+    "token": "9f0639aea6686eb215ce7dda3d626c7d",
+    "gateway": "shopify_payments",
+    "test": false,
+    "total_price": "23.96",
+    "subtotal_price": "23.96",
+    "total_weight": 453,
+    "total_tax": "0.00",
+    "taxes_included": false,
+    "currency": "USD",
+    "financial_status": "paid",
+    "confirmed": true,
+    "total_discounts": "5.99",
+    "total_line_items_price": "29.95",
+    "cart_token": "454a9fe7070d7525d88135a366d705e5",
+    "buyer_accepts_marketing": true,
+    "name": "85807",
+    "referring_site": "https://www.google.com/",
+    "landing_site": "/collections/bestsellers?utm_source=google&utm_medium=cpc&utm_term=prive revaux&utm_campaign=g-us-search-brand-exact&utm_content=326114416024&gclid=CjwKCAjw-OHkBRBkEiwAoOZql3YPxzvgBBxLrWIcHa8zSbfEXklG51IOSBLomtxFXrtHMhj75ViMDRoCTfMQAvD_BwE",
+    "cancelled_at": null,
+    "cancel_reason": null,
+    "total_price_usd": "23.96",
+    "checkout_token": "626ecfede5b036a2172141de1b41cbff",
+    "reference": null,
+    "user_id": null,
+    "location_id": null,
+    "source_identifier": null,
+    "source_url": null,
+    "processed_at": "2019-03-25T09:45:20-04:00",
+    "device_id": null,
+    "phone": null,
+    "customer_locale": "en",
+    "app_id": 580111,
+    "browser_ip": "174.195.137.143",
+    "landing_site_ref": null,
+    "order_number": 85807,
+    "discount_applications": [
+        {
+            "type": "discount_code",
+            "value": "20.0",
+            "value_type": "percentage",
+            "allocation_method": "across",
+            "target_selection": "all",
+            "target_type": "line_item",
+            "code": "prive20"
+        }
+    ],
+    "discount_codes": [
+        {
+            "code": "prive20",
+            "amount": "5.99",
+            "type": "percentage"
+        }
+    ],
+    "note_attributes": [],
+    "payment_gateway_names": [
+        "shopify_payments"
+    ],
+    "processing_method": "direct",
+    "checkout_id": 7556331634742,
+    "source_name": "web",
+    "fulfillment_status": null,
+    "tax_lines": [],
+    "tags": "",
+    "contact_email": "llj1414g@gmail.com",
+    "order_status_url": "https://priverevaux.com/1778745403/orders/9f0639aea6686eb215ce7dda3d626c7d/authenticate?key=c93cca11520f9a9f99d3eeb9d4cda609",
+    "presentment_currency": "USD",
+    "total_line_items_price_set": {
+        "shop_money": {
+            "amount": "29.95",
+            "currency_code": "USD"
+        },
+        "presentment_money": {
+            "amount": "29.95",
+            "currency_code": "USD"
+        }
+    },
+    "total_discounts_set": {
+        "shop_money": {
+            "amount": "5.99",
+            "currency_code": "USD"
+        },
+        "presentment_money": {
+            "amount": "5.99",
+            "currency_code": "USD"
+        }
+    },
+    "total_shipping_price_set": {
+        "shop_money": {
+            "amount": "0.00",
+            "currency_code": "USD"
+        },
+        "presentment_money": {
+            "amount": "0.00",
+            "currency_code": "USD"
+        }
+    },
+    "subtotal_price_set": {
+        "shop_money": {
+            "amount": "23.96",
+            "currency_code": "USD"
+        },
+        "presentment_money": {
+            "amount": "23.96",
+            "currency_code": "USD"
+        }
+    },
+    "total_price_set": {
+        "shop_money": {
+            "amount": "23.96",
+            "currency_code": "USD"
+        },
+        "presentment_money": {
+            "amount": "23.96",
+            "currency_code": "USD"
+        }
+    },
+    "total_tax_set": {
+        "shop_money": {
+            "amount": "0.00",
+            "currency_code": "USD"
+        },
+        "presentment_money": {
+            "amount": "0.00",
+            "currency_code": "USD"
+        }
+    },
+    "total_tip_received": "0.0",
+    "admin_graphql_api_id": "gid://shopify/Order/857850249270",
+    "line_items": [
+        {
+            "id": 2003892666422,
+            "variant_id": 7484825665595,
+            "title": "Candy",
+            "quantity": 1,
+            "price": "29.95",
+            "sku": "2S10006AM103",
+            "variant_title": "Rose Gold/Black",
+            "vendor": "Priv\u00e9 Revaux",
+            "fulfillment_service": "manual",
+            "product_id": 615873183803,
+            "requires_shipping": true,
+            "taxable": true,
+            "gift_card": false,
+            "pre_tax_price": "23.96",
+            "name": "Candy - Rose Gold/Black",
+            "variant_inventory_management": "shopify",
+            "properties": [],
+            "product_exists": true,
+            "fulfillable_quantity": 1,
+            "grams": 454,
+            "total_discount": "0.00",
+            "fulfillment_status": null,
+            "price_set": {
+                "shop_money": {
+                    "amount": "29.95",
+                    "currency_code": "USD"
+                },
+                "presentment_money": {
+                    "amount": "29.95",
+                    "currency_code": "USD"
+                }
+            },
+            "pre_tax_price_set": {
+                "shop_money": {
+                    "amount": "23.96",
+                    "currency_code": "USD"
+                },
+                "presentment_money": {
+                    "amount": "23.96",
+                    "currency_code": "USD"
+                }
+            },
+            "total_discount_set": {
+                "shop_money": {
+                    "amount": "0.00",
+                    "currency_code": "USD"
+                },
+                "presentment_money": {
+                    "amount": "0.00",
+                    "currency_code": "USD"
+                }
+            },
+            "discount_allocations": [
+                {
+                    "amount": "5.99",
+                    "discount_application_index": 0,
+                    "amount_set": {
+                        "shop_money": {
+                            "amount": "5.99",
+                            "currency_code": "USD"
+                        },
+                        "presentment_money": {
+                            "amount": "5.99",
+                            "currency_code": "USD"
+                        }
+                    }
+                }
+            ],
+            "admin_graphql_api_id": "gid://shopify/LineItem/2003892666422",
+            "tax_lines": [],
+            "origin_location": {
+                "id": 327348518971,
+                "country_code": "US",
+                "province_code": "FL",
+                "name": "priverevaux",
+                "address1": "2627 NE 203rd St",
+                "address2": "Suite 201",
+                "city": "Aventura",
+                "zip": "33180"
+            }
+        }
+    ],
+    "shipping_lines": [
+        {
+            "id": 693373894710,
+            "title": "Free Shipping (5-7 days)",
+            "price": "0.00",
+            "code": "Free Shipping (5-7 days)",
+            "source": "shopify",
+            "phone": null,
+            "requested_fulfillment_service_id": null,
+            "delivery_category": null,
+            "carrier_identifier": null,
+            "discounted_price": "0.00",
+            "price_set": {
+                "shop_money": {
+                    "amount": "0.00",
+                    "currency_code": "USD"
+                },
+                "presentment_money": {
+                    "amount": "0.00",
+                    "currency_code": "USD"
+                }
+            },
+            "discounted_price_set": {
+                "shop_money": {
+                    "amount": "0.00",
+                    "currency_code": "USD"
+                },
+                "presentment_money": {
+                    "amount": "0.00",
+                    "currency_code": "USD"
+                }
+            },
+            "discount_allocations": [],
+            "tax_lines": []
+        }
+    ],
+    "billing_address": {
+        "first_name": "Leah",
+        "address1": "1906 Sherrill Boulevard",
+        "phone": null,
+        "city": "Murfreesboro",
+        "zip": "37130",
+        "province": "Tennessee",
+        "country": "United States",
+        "last_name": "Gonzales",
+        "address2": "",
+        "company": null,
+        "latitude": 35.830404,
+        "longitude": -86.36140549999999,
+        "name": "Leah Gonzales",
+        "country_code": "US",
+        "province_code": "TN"
+    },
+    "shipping_address": {
+        "first_name": "Leah",
+        "address1": "1906 Sherrill Boulevard",
+        "phone": null,
+        "city": "Murfreesboro",
+        "zip": "37130",
+        "province": "Tennessee",
+        "country": "United States",
+        "last_name": "Gonzales",
+        "address2": "",
+        "company": null,
+        "latitude": 35.830404,
+        "longitude": -86.36140549999999,
+        "name": "Leah Gonzales",
+        "country_code": "US",
+        "province_code": "TN"
+    },
+    "fulfillments": [],
+    "client_details": {
+        "browser_ip": "174.195.137.143",
+        "accept_language": "en-US,en;q=0.9",
+        "user_agent": "Mozilla/5.0 (Linux; Android 9; SM-N960U) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Mobile Safari/537.36",
+        "session_hash": null,
+        "browser_width": 412,
+        "browser_height": 718
+    },
+    "refunds": [],
+    "payment_details": {
+        "credit_card_bin": "474487",
+        "avs_result_code": "Y",
+        "cvv_result_code": "M",
+        "credit_card_number": "\u2022\u2022\u2022\u2022 \u2022\u2022\u2022\u2022 \u2022\u2022\u2022\u2022 0494",
+        "credit_card_company": "Visa"
+    },
+    "customer": {
+        "id": 1182833999926,
+        "email": "llj1414g@gmail.com",
+        "accepts_marketing": true,
+        "created_at": "2019-03-25T09:42:46-04:00",
+        "updated_at": "2019-03-25T09:45:21-04:00",
+        "first_name": "Leah",
+        "last_name": "Gonzales",
+        "orders_count": 1,
+        "state": "disabled",
+        "total_spent": "23.96",
+        "last_order_id": 857850249270,
+        "note": null,
+        "verified_email": true,
+        "multipass_identifier": null,
+        "tax_exempt": false,
+        "phone": null,
+        "tags": "",
+        "last_order_name": "85807",
+        "currency": "USD",
+        "accepts_marketing_updated_at": "2019-03-25T09:42:46-04:00",
+        "marketing_opt_in_level": "single_opt_in",
+        "admin_graphql_api_id": "gid://shopify/Customer/1182833999926",
+        "default_address": {
+            "id": 1415611514934,
+            "customer_id": 1182833999926,
+            "first_name": "Leah",
+            "last_name": "Gonzales",
+            "company": null,
+            "address1": "1906 Sherrill Boulevard",
+            "address2": "",
+            "city": "Murfreesboro",
+            "province": "Tennessee",
+            "country": "United States",
+            "zip": "37130",
+            "phone": null,
+            "name": "Leah Gonzales",
+            "province_code": "TN",
+            "country_code": "US",
+            "country_name": "United States",
+            "default": true
+        }
+    }
+}

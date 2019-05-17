@@ -1,0 +1,178 @@
+# Welcome to Serverless!
+# For full config options, check the docs: docs.serverless.com
+
+service: analytics-ingest
+
+provider:
+  name: aws
+  runtime: python3.7
+  versionFunctions: false
+  stage: ${opt:stage, 'dev'}
+  region: us-west-2
+
+# you can add statements to the Lambda function's IAM Role here
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - "s3:*"
+      Resource:
+        Fn::Join:
+          - ""
+          - - "arn:aws:s3:::"
+            - "Ref" : "AnalyticsReportStorageBucket"
+            - "/*"
+    - Effect: "Allow"
+      Action:
+        - "s3:*"
+      Resource:
+        Fn::Join:
+          - ""
+          - - "arn:aws:s3:::"
+            - "Ref" : "GoogleAnalyticsReportStorageBucket"
+            - "/*"
+    - Effect: "Allow"
+      Action:
+        - "s3:*"
+      Resource:
+        Fn::Join:
+          - ""
+          - - "arn:aws:s3:::"
+            - "Ref" : "KlaviyoReportStorageBucket"
+            - "/*"
+    - Effect: "Allow"
+      Action:
+        - "s3:*"
+      Resource:
+        Fn::Join:
+          - ""
+          - - "arn:aws:s3:::"
+            - "Ref" : "ShopifyReportStorageBucket"
+            - "/*"
+    - Effect: Allow
+      Action:
+        - lambda:*
+      Resource: "*"
+
+# you can define service wide environment variables here
+  environment:
+    ENVIRONMENT: "${self:provider.stage}"
+    S3_BUCKET: "${file(./serverless.env.yml):${self:provider.stage}.s3_bucket}"
+    GOOGLE_ANALYTICS_S3_BUCKET: "${file(./serverless.env.yml):${self:provider.stage}.google_analytics_s3_bucket}"
+    KLAVIYO_S3_BUCKET: "${file(./serverless.env.yml):${self:provider.stage}.klaviyo_s3_bucket}"
+    SHOPIFY_S3_BUCKET: "${file(./serverless.env.yml):${self:provider.stage}.shopify_s3_bucket}"
+    SNS_TOPIC_ARN: "arn:aws:sns:#{AWS::Region}:#{AWS::AccountId}:${file(./serverless.env.yml):${self:provider.stage}.sns_topic_name}"
+
+custom:
+  LAMBDA_TIMEOUT: "900"
+
+# you can add packaging information here
+package:
+#  include:
+#    - include-me.py
+#    - include-me-dir/**
+  exclude:
+    - node_modules/**
+    - README.md
+    - package.json
+    - .serverless
+    - requirements.txt
+    - redshift/**
+    - venv/**
+    - venv-idea/**
+    - .idea/**
+    - scripts/**
+    - postman_collections/**
+    - .gitignore
+    - credentials.csv
+    - credentials.txt
+
+functions:
+  ingest-shopify-analytics:
+    handler: ingest_shopify_analytics.handler
+    timeout: "${self:custom.LAMBDA_TIMEOUT}"
+    memorySize: 2048
+    onError: "arn:aws:sns:#{AWS::Region}:#{AWS::AccountId}:${file(./serverless.env.yml):${self:provider.stage}.sns_topic_name}"
+    events:
+      - schedule: rate(1 day) # Invoke Lambda function every 1 hour or 2 hours or 1 minute or 10 minutes
+
+  ingest-klaviyo-timeline-analytics:
+    handler: ingest_klaviyo_timeline_analytics.handler
+    timeout: "${self:custom.LAMBDA_TIMEOUT}"
+    memorySize: 3008
+    onError: "arn:aws:sns:#{AWS::Region}:#{AWS::AccountId}:${file(./serverless.env.yml):${self:provider.stage}.sns_topic_name}"
+    events:
+      - schedule: rate(1 day) # Invoke Lambda function every 1 hour or 2 hours or 1 minute or 10 minutes
+
+  ingest-klaviyo-metrics-listing-analytics:
+    handler: ingest_klaviyo_metrics_listing_analytics.handler
+    timeout: "${self:custom.LAMBDA_TIMEOUT}"
+    memorySize: 2048
+    onError: "arn:aws:sns:#{AWS::Region}:#{AWS::AccountId}:${file(./serverless.env.yml):${self:provider.stage}.sns_topic_name}"
+    events:
+      - schedule: rate(1 day) # Invoke Lambda function every 1 hour or 2 hours or 1 minute or 10 minutes
+
+  ingest-google-analytics:
+    handler: ingest_google_analytics.handler
+    timeout: "${self:custom.LAMBDA_TIMEOUT}"
+    memorySize: 3008
+    onError: "arn:aws:sns:#{AWS::Region}:#{AWS::AccountId}:${file(./serverless.env.yml):${self:provider.stage}.sns_topic_name}"
+    events:
+      - schedule: rate(1 day) # Invoke Lambda function every 1 hour or 2 hours or 1 minute or 10 minutes
+
+  test-lambda:
+    handler: test.handler
+    timeout: "${self:custom.LAMBDA_TIMEOUT}"
+    memorySize: 1024
+    onError: "arn:aws:sns:#{AWS::Region}:#{AWS::AccountId}:${file(./serverless.env.yml):${self:provider.stage}.sns_topic_name}"
+
+
+# you can add CloudFormation resource templates here
+resources:
+  Resources:
+    AnalyticsReportStorageBucket:
+      Type: AWS::S3::Bucket
+      Properties:
+        BucketName: "${file(./serverless.env.yml):${self:provider.stage}.s3_bucket}"
+    GoogleAnalyticsReportStorageBucket:
+      Type: AWS::S3::Bucket
+      Properties:
+        BucketName: "${file(./serverless.env.yml):${self:provider.stage}.google_analytics_s3_bucket}"
+    KlaviyoReportStorageBucket:
+      Type: AWS::S3::Bucket
+      Properties:
+        BucketName: "${file(./serverless.env.yml):${self:provider.stage}.klaviyo_s3_bucket}"
+    ShopifyReportStorageBucket:
+      Type: AWS::S3::Bucket
+      Properties:
+        BucketName: "${file(./serverless.env.yml):${self:provider.stage}.shopify_s3_bucket}"
+    AsobaAnalyticsIngestTopic:
+      Type: "AWS::SNS::Topic"
+      Properties:
+        TopicName: "${file(./serverless.env.yml):${self:provider.stage}.sns_topic_name}"
+        Subscription:
+          - Endpoint: "${file(./serverless.env.yml):${self:provider.stage}.sns_email_subscription}"
+            Protocol: "email"
+    IngestDashshopifyDashanalyticsLogGroup:
+      Type: AWS::Logs::LogGroup
+      Properties:
+        RetentionInDays: "14"
+    IngestDashklaviyoDashtimelineDashanalyticsLogGroup:
+      Type: AWS::Logs::LogGroup
+      Properties:
+        RetentionInDays: "14"
+    IngestDashklaviyoDashmetricsDashlistingDashanalyticsLogGroup:
+      Type: AWS::Logs::LogGroup
+      Properties:
+        RetentionInDays: "14"
+    IngestDashgoogleDashanalyticsLogGroup:
+      Type: AWS::Logs::LogGroup
+      Properties:
+        RetentionInDays: "14"
+    TestDashlambdaLogGroup:
+      Type: AWS::Logs::LogGroup
+      Properties:
+        RetentionInDays: "1"
+
+plugins:
+  - serverless-python-requirements
+  - serverless-pseudo-parameters

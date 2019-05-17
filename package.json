@@ -1,0 +1,21 @@
+{
+  "name": "analytics_ingest",
+  "version": "1.0.0",
+  "description": "Asoba Analytics Ingest",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "asoba"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "serverless": "^1.39.1",
+    "serverless-python-requirements": "^4.3.0"
+  },
+  "devDependencies": {
+    "serverless-pseudo-parameters": "^2.4.0"
+  }
+}
